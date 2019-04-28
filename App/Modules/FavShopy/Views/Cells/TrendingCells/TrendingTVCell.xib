@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="322" id="KGk-i7-Jjw" customClass="TrendingTVCell" customModule="myfavourites" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="434" height="322"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="434" height="321.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0p-Q5-Aa1">
+                        <rect key="frame" x="5" y="5" width="424" height="311.5"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="model1" translatesAutoresizingMaskIntoConstraints="NO" id="SgU-ae-QPj" customClass="ScaledHeightImageView" customModule="myfavourites" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="424" height="261.5"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1cj-xU-yUP">
+                                <rect key="frame" x="0.0" y="261.5" width="424" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Asj-eG-ocp" customClass="AppButtonIcon" customModule="myfavourites" customModuleProvider="target">
+                                        <rect key="frame" x="328" y="3" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="1K8-a7-BJi"/>
+                                            <constraint firstAttribute="width" constant="44" id="x7q-RX-YdU"/>
+                                        </constraints>
+                                        <state key="normal" image="shareIcon"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWc-Gv-fhb" customClass="AppButtonIcon" customModule="myfavourites" customModuleProvider="target">
+                                        <rect key="frame" x="391" y="3" width="25" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="jFA-ap-5ow"/>
+                                        </constraints>
+                                        <state key="normal" image="arIcon"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ad posted on 23/04/2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIU-BY-Ue9" customClass="AppFootnote" customModule="myfavourites" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="18" width="145" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3V-Yd-pJZ" customClass="AppButtonIcon" customModule="myfavourites" customModuleProvider="target">
+                                        <rect key="frame" x="274" y="3" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Rze-b2-T3U"/>
+                                            <constraint firstAttribute="width" constant="44" id="rah-x7-raY"/>
+                                        </constraints>
+                                        <state key="normal" image="likeIcon"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="eIU-BY-Ue9" firstAttribute="centerY" secondItem="1cj-xU-yUP" secondAttribute="centerY" id="HEb-DB-FgF"/>
+                                    <constraint firstItem="wWc-Gv-fhb" firstAttribute="leading" secondItem="Asj-eG-ocp" secondAttribute="trailing" constant="19" id="INQ-O4-SXd"/>
+                                    <constraint firstItem="Asj-eG-ocp" firstAttribute="leading" secondItem="h3V-Yd-pJZ" secondAttribute="trailing" constant="10" id="IR9-6q-Iqh"/>
+                                    <constraint firstAttribute="trailing" secondItem="wWc-Gv-fhb" secondAttribute="trailing" constant="8" id="Kkc-WT-6tZ"/>
+                                    <constraint firstItem="h3V-Yd-pJZ" firstAttribute="centerY" secondItem="1cj-xU-yUP" secondAttribute="centerY" id="Mvw-bR-Ebi"/>
+                                    <constraint firstAttribute="height" constant="50" id="PAj-iN-gLt"/>
+                                    <constraint firstItem="eIU-BY-Ue9" firstAttribute="leading" secondItem="1cj-xU-yUP" secondAttribute="leading" constant="10" id="hFG-31-Lif"/>
+                                    <constraint firstItem="wWc-Gv-fhb" firstAttribute="centerY" secondItem="1cj-xU-yUP" secondAttribute="centerY" id="vM6-JM-ad6"/>
+                                    <constraint firstItem="Asj-eG-ocp" firstAttribute="centerY" secondItem="1cj-xU-yUP" secondAttribute="centerY" id="y82-1F-hP8"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="QJI-fF-GVI"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="1cj-xU-yUP" secondAttribute="trailing" id="0WY-IO-7en"/>
+                            <constraint firstAttribute="trailing" secondItem="SgU-ae-QPj" secondAttribute="trailing" id="IOz-HN-u0y"/>
+                            <constraint firstAttribute="bottom" secondItem="1cj-xU-yUP" secondAttribute="bottom" id="QaT-18-x1Z"/>
+                            <constraint firstItem="1cj-xU-yUP" firstAttribute="top" secondItem="SgU-ae-QPj" secondAttribute="bottom" id="UhE-IY-KFb"/>
+                            <constraint firstItem="1cj-xU-yUP" firstAttribute="leading" secondItem="x0p-Q5-Aa1" secondAttribute="leading" id="b4g-Ai-EXi"/>
+                            <constraint firstItem="SgU-ae-QPj" firstAttribute="leading" secondItem="x0p-Q5-Aa1" secondAttribute="leading" id="xsY-lK-7Xv"/>
+                            <constraint firstItem="SgU-ae-QPj" firstAttribute="top" secondItem="x0p-Q5-Aa1" secondAttribute="top" id="zPt-61-tZC"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="x0p-Q5-Aa1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="A0R-Ug-TWd"/>
+                    <constraint firstAttribute="trailing" secondItem="x0p-Q5-Aa1" secondAttribute="trailing" constant="5" id="hVl-IG-nI2"/>
+                    <constraint firstItem="x0p-Q5-Aa1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="jHz-ga-DrP"/>
+                    <constraint firstAttribute="bottom" secondItem="x0p-Q5-Aa1" secondAttribute="bottom" constant="5" id="y5y-65-Gvz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="AdImage" destination="SgU-ae-QPj" id="HVe-x1-N8W"/>
+                <outlet property="arBtn" destination="wWc-Gv-fhb" id="NQk-Xy-SPk"/>
+                <outlet property="footerView" destination="1cj-xU-yUP" id="nNI-Xp-yYJ"/>
+                <outlet property="likeBtn" destination="h3V-Yd-pJZ" id="FdL-oE-YoY"/>
+                <outlet property="shareBtn" destination="Asj-eG-ocp" id="UJz-Ju-Olb"/>
+            </connections>
+            <point key="canvasLocation" x="89.855072463768124" y="145.98214285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="arIcon" width="25" height="25"/>
+        <image name="likeIcon" width="24" height="24"/>
+        <image name="model1" width="150" height="100"/>
+        <image name="shareIcon" width="24" height="24"/>
+    </resources>
+</document>

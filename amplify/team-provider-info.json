@@ -1,0 +1,19 @@
+{
+    "ios": {
+        "awscloudformation": {
+            "AuthRoleName": "myfavourites-20190427161308-authRole",
+            "UnauthRoleArn": "arn:aws:iam::438152457213:role/myfavourites-20190427161308-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::438152457213:role/myfavourites-20190427161308-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "myfavourites-20190427161308-deployment",
+            "UnauthRoleName": "myfavourites-20190427161308-unauthRole",
+            "StackName": "myfavourites-20190427161308",
+            "StackId": "arn:aws:cloudformation:us-east-1:438152457213:stack/myfavourites-20190427161308/40625990-68d9-11e9-8666-0eb8ff60a84c"
+        },
+        "categories": {
+            "auth": {
+                "cognito7c3d19bd": {}
+            }
+        }
+    }
+}
