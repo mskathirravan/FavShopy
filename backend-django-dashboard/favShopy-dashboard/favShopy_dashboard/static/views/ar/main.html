@@ -1,0 +1,148 @@
+
+
+<div class="row activation-summary-banner" style="background-image: url('https://cdn1.sportngin.com/attachments/photo/4543/5427/RockyMountainLegendsProof6-FINAL.jpg');">
+    <div class="overlay-inner"></div>
+    <div class="col s12 m12 l12 margin_none">
+        <div class="row white-text margin_none">
+            <div class="col s12 m7 l7 margin_none padding_none">
+                <p class="margin_none white-text">Total activation summary</p>
+            </div>
+            <div class="col s12 m5 l5 margin_none right-align">
+                <ul class="analytics-switch-list">
+                    <li>
+                        <a href="javascript:void(0);">Day</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="active">Month</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">Year</a>
+                    </li>
+                </ul>
+                <a href="javascript:void(0);" class="btn btn-sm blue">Detailed report</a>
+            </div>
+        </div>
+        <div class="row white-text">
+            <div class="col s12 m12 l12 margin_none padding_none bottom-bordered-column">
+                <h1><?php echo number_format($total_activation_count); ?> <small>Activations</small></h1>
+                <div class="progress-bars">
+                <?php
+                for ($i=0; $i<count($feature_array); $i++) {
+                    ?>
+                    <div class="progress" style="background-color: <?php echo $feature_array[$i]['color']; ?>;width: <?php echo rand(10, 100) + 100; ?>px;">
+                    </div>
+                    <?php
+                }
+                ?>
+                </div>
+            </div>
+        </div>
+        <div class="row white-text margin_none">
+            <div class="col s12 m12 l12 margin_none">
+                <table class="table responsive-table">
+                    <tr>
+                        <?php
+                        for ($i=0; $i<count($feature_array); $i++) {
+                            ?>
+                            <td>
+                                <i class="fa fa-circle" style="color: <?php echo $feature_array[$i]['color'] ?>;"></i>
+                            </td>
+                            <td>
+                                <p class="margin_none"><?php echo $feature_array[$i]['name'] ?></p>
+                                <h3 class="margin_none"><?php echo number_format($feature_array[$i]['activations']); ?></h3>
+                            </td>
+                            <?php
+                        }
+                        ?>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col s12 m12 l12 padding_none">
+        <?php echo validation_errors('<div class="validation_error">', '</div>'); ?>
+        <div class="addSeries" id="addSeries">
+            <div class="row box-shadow margin_none">
+                <div class="col s12 m12 l12 padding_none">
+                    <?php
+                    foreach($ar_contents as $ar_content) {
+                        ?>
+                        <div class="card">
+                            <div class="row margin_none feature feature-1">
+                                <div class="col s12 m7 l7 margin_none">
+                                    <button class="feature-name" type="button"
+                                            style="background-color: <?php echo $ar_feature_color_code[$ar_content['typeid']]; ?>; cursor: default;">
+                                        <?php echo $ar_feature_name[$ar_content['typeid']]; ?>
+                                    </button>
+                                    <p class="feature-title"><?php echo $ar_content['title']; ?></p>
+                                    <?php /*var_dump($ar_content);
+                                    echo $ar_content['imageurl'];
+                                    echo $ar_content['_id'];
+                                    echo $ar_content['image_thumbnail'];
+                                    echo $ar_content['videourl'];*/
+                                    ?>
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void(0);" onclick="openFeatureModal(this, '<?php echo $ar_content['_id']; ?>');" type="button">Update video link</a>
+                                        </li>
+                                        <li>
+                                            <a href="<?php echo base_url() . "client/ar/get_ar_detailed_analytics/" . $ar_content['_id']; ?>">Detailed analytics</a>
+                                        </li>
+                                        <li>
+                                            <a>Target image</a>
+                                        </li>
+                                        <li>
+                                            <img
+                                                src="<?php echo $ar_content['imageurl']; ?>"
+                                                class="img responsive-img"
+                                                width="15%" style="max-height: 100px;max-width: 15%;">
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col s12 m2 l2 margin_none activation-count-block">
+                                    <p class="activation-count-title">Activation count</p>
+                                    <p class="activation-count-number">
+                                        <?php
+                                        $ac_count = (rand(1000,9999));
+                                        echo(number_format($ac_count));
+                                        ?>
+                                    </p>
+                                </div>
+                                <div class="col s12 m3 l3 margin_none current-status">
+                                    <p class="current-status-title">Current status</p>
+                                    <div class="videoPreview">
+                                        <a class="videoOverlay modal-trigger" href="#videoLoader" data-value="<?php echo $ar_content['videourl']; ?>">
+                                            <i class="fa fa-play"></i>
+                                        </a>
+                                        <img src="<?php echo $ar_content['image_thumbnail']; ?>" class="img responsive-img">
+                                    </div>
+                                    <div class="switch">
+                                        <label>
+                                            <input type="checkbox" checked disabled>
+                                            <span class="lever"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-fixed-footer" id="videoLoader">
+    <div class="modal-content">
+        <iframe src="" width="100%" height="400px" scrolling="no"></iframe>
+    </div>
+    <div class="modal-footer">
+        <a href="javacript:void(0);" class="btn blue modal-close">Close</a>
+    </div>
+</div>
+
+

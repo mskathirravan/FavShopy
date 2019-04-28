@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+
+        <div class="row">
+            <form class="col s12" action="{% url 'user_app:add_product' %}" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="Product Name" id="product_name" name="product_name" type="text"
+                               class="validate">
+                        <label for="product_name">Product Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="product_price" type="number" name="product_price" min="0" class="validate">
+                        <label for="product_price">Product Price</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="Promo" id="Promo" name="promo" type="text" class="validate">
+                        <label for="Promo">Promo Code</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="expiry_date" name="expiry_date" type="text" class="datepicker">
+                        <label for="expiry_date">Expiry Date</label>
+                    </div>
+                </div>
+
+
+                <p>
+                    <label>
+                        <input name="group1" value="True" type="radio" checked/>
+                        <span>Publish</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input name="group1" value="False" type="radio"/>
+                        <span>Unpublish</span>
+                    </label>
+                </p>
+
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="description" class="materialize-textarea" name="description"></textarea>
+                        <label for="description">Description</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Add Product</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+{% endblock  %}
+

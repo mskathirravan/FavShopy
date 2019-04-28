@@ -1,0 +1,130 @@
+
+
+<div class="row">
+    <div class="col s2 m2 l2  sidebar-fixed hide-on-med-and-down">
+        <div class="sidebar">
+            <div class="logo">
+                <a href="">
+                    <img src="" class="img responsive-img logo-thumbnail">
+                </a>
+            </div>
+            <div id="scroll_bar" class="hidden_scrollbar">
+                <div class="menu-items ">
+                    <ul>
+                        <li>
+                            <a href="{% url 'user_app:dashboard' %}"><i class="fa fa-tachometer" aria-hidden="true"></i>Home</a>
+                        </li>
+
+                        <li>
+                            <a href="{% url 'user_app:get_all_products' %}" aria-hidden="true"></i>Products</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class=""> -->
+    <ul id="slide-out" class="sidenav menu-items hidden_scrollbar">
+        <li class="logo">
+            <img src="" class="img responsive-img logo-thumbnail">
+        </li>
+        <li><a href=""><i class="material-icons">timeline</i>Home</a></li>
+        <li class="list-item-active"><a href=""><i class="material-icons">local_library</i>Fanisko Discover</a></li>
+
+        <li><a href=""><i class="fa fa-lg fa-gamepad"></i>AR</a></li>
+
+        <li>
+            <a href=""><i class="fa fa-lg fa-gear"></i>Addons</a>
+            <ul class="sub-menu">
+                <li><a href=""><i class="fa fa-lg fa-minus"></i>Teams</a></li>
+                <li><a href=""><i class="fa fa-lg fa-minus"></i>Players</a></li>
+                <li><a href=""><i class="fa fa-lg fa-minus"></i>Events</a></li>
+                <li><a href=""><i class="fa fa-lg fa-minus"></i>Sponsors</a>
+                </li>
+            </ul>
+        </li>
+
+
+        <li>
+            <a href=""><i class="fa fa-lg fa-user-circle"></i>Settings</a>
+
+            <ul class="sub-menu">
+                <li><a href=""><i class="fa fa-lg fa-user"></i>Users</a></li>
+            </ul>
+
+        </li>
+    </ul>
+
+    <!-- </div> -->
+    <div class="col s12 m12 l10 push-l2 padding_none">
+        <div class="navbar-header">
+            <div class="nav-wrapper">
+                <div class="row">
+                    <div class="col s12">
+                        <ul class="hide-on-med-and-down left">
+                            <div class="row margin_top_bottom_10">
+                                <div class="col s12 m12 l12">
+                                    <a href="" class="breadcrumb camelcase white-text">Home</a>
+
+                                </div>
+                            </div>
+                        </ul>
+                        <ul class="left show-on-med-and-down hide-on-large-only">
+                            <li><a href="#" data-target="slide-out"
+                                   class="button-collapse grey-text text-darken-1 sidenav-trigger"><i
+                                    class="material-icons">menu</i></a></li>
+                            <li class="logo">
+                                <img src="" class="img responsive-img logo-small">
+                            </li>
+                        </ul>
+                        <ul class="right">
+
+                            <li>
+                                <a class="grey-text text-darken-2 dropdown-trigger" href="#"
+                                   data-target="user-options">
+                                    <div class="user-information">
+                                        <div class="user-photo">
+                                            <div class="user-name">
+                                                <i class="fa fa-caret-down"></i>
+                                                <span class="grey-text text-lighten-1 small">
+                                                </span>
+                                            </div>
+                                            Dashboard<img src="" class="img responsive-img circle">
+                                        </div>
+                                    </div>
+                                </a>
+                                <ul id="user-options" class="dropdown-content">
+
+                                 {% if user.is_authenticated %}
+
+                                    <li><a href="/" class="grey-text text-darken-1">Welcome {{user.username}}!</a></li>
+                                    <li>
+                                        <a class="grey-text text-darken-1"
+                                           href="javascript:{document.getElementById('logout').submit()}">Sign Out</a>
+                                        <form action="{% url 'user_app:logout' %}" id="logout" method="POST">
+                                            {% csrf_token %}
+                                            <input type="hidden">
+                                        </form>
+                                    </li>
+                                    {% else %}
+
+                                    <li>
+                                        <a class="grey-text text-darken-1" href="{%url 'user_app:login' %}">Sign In</a>
+                                    </li>
+
+                                    <li>
+                                        <a class="grey-text text-darken-1" href="{%url 'user_app:signup' %}">Sign Up</a>
+                                    </li>
+
+                                    {% endif %}
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+

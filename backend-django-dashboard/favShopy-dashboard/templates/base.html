@@ -1,0 +1,44 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>FavShopy Dashboard</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+
+    <link rel="stylesheet" href="{% static 'back/css/materialize.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- css -->
+    <link rel="stylesheet" href="{% static 'back/css/stylesheet.css' %}">
+
+</head>
+<body class="overflow-hidden">
+
+{% if user.is_authenticated %}
+
+{% include 'pages/sidebar.html' %}
+
+{% endif %}
+
+{% block content %}
+{% endblock %}
+
+<div class="overlayLoader" id="overlayLoader" style="display: none;">
+    <div class="progressbar">
+        <div class="progress">
+            <div class="indeterminate orange"></div>
+        </div>
+    </div>
+</div>
+
+
+<script src="{% static 'back/js/jquery-2.1.4.min.js' %} "></script>
+<script src="{% static 'back/js/materialize.min.js' %} "></script>
+<script src="{% static 'back/js/javascript.js' %} "></script>
+
+
+</body>
+</html>
+

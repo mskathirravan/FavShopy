@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+        <a href="{% url 'user_app:add_product' %}" class="waves-effect waves-light btn">Add Product</a>
+        <a href="{% url 'user_app:delete_all' %}" class="waves-effect waves-light btn">Delete All Products</a>
+        <table>
+            <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Promo</th>
+                <th>Expiry Date</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for i in context %}
+            <tr>
+                <td>{{i.product_name}}</td>
+                <td>{{i.product_price}}</td>
+                <td>{{i.promo}}</td>
+                <td>{{i.expiry_date}}</td>
+            </tr>
+             {% endfor %}
+
+            </tbody>
+        </table>
+
+
+    </div>
+</div>
+
+{% endblock  %}
+
